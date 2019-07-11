@@ -37,11 +37,20 @@ test {
     }
 }
 
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
 jacocoTestReport {
     reports {
         xml.enabled true
         xml.destination file("$buildDir/jacoco.xml")
     }
+}
+
+artifacts {
+    archives sourcesJar
 }
 
 jacocoTestReport.dependsOn test
