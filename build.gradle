@@ -27,7 +27,7 @@ dependencies {
     //testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-sonarqube.dependsOn check, jacocoTestCoverageVerification, jacocoTestReport
+check.dependsOn jacocoTestCoverageVerification, jacocoTestReport
 
 test {
     useJUnitPlatform()
