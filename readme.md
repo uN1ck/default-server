@@ -1,0 +1,1 @@
+https://travis-ci.org/uN1ck/default-server.svg?branch=master
