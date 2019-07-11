@@ -25,6 +25,6 @@ dependencies {
 
 sonarqube {
     properties {
-        property "sonar.projectKey" : "un1ckq"
+        property "sonar.projectKey", "un1cq"
     }
 }
