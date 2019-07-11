@@ -48,7 +48,11 @@ jacocoTestReport.dependsOn test
 
 sonarqube {
     properties {
-        property 'sonar.coverage.jacoco.xmlReportPaths', "${buildDir}/jacoco.xml"
-        property "sonar.projectKey", "un1cq"
+        property 'sonar.codeCoveragePlugin', 'jacoco'
+        property 'sonar.java.binaries', "${buildDir}/classes"
+        property 'sonar.java.libraries', "${buildDir}/**/*.jar"
+        property 'sonar.jacoco.reportPath', "${buildDir}/jacoco/jacoco.exec"
+        property 'sonar.projectKey', 'un1cq'
+
     }
 }
