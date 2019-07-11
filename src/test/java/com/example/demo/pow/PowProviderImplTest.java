@@ -1,9 +1,8 @@
 package com.example.demo.pow;
 
-import org.assertj.core.api.Assertions;
-import org.junit.Test;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class PowProviderImplTest {
 
@@ -12,13 +11,13 @@ public class PowProviderImplTest {
     @Test
     public void getPowFromTwo() {
         int value = powProvider.getPow(2);
-        Assertions.assertThat(value).isEqualTo(4);
+        Assertions.assertEquals(4, value);
     }
 
     @Test
     public void getPowFromTen() {
         int value = powProvider.getPow(10);
-        Assertions.assertThat(value).isEqualTo(100);
+        Assertions.assertEquals(100, value);
     }
 
 }
