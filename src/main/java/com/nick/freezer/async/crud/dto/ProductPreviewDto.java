@@ -1,12 +1,12 @@
-package com.nick.freezer.async.entities;
+package com.nick.freezer.async.crud.dto;
 
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
 @Data
-public class Product {
+@Builder
+public class ProductPreviewDto {
+    private final Long id;
     private final String name;
     private final Double amount;
-    private final String metrics;
 }
