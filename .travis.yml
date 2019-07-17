@@ -1,14 +1,12 @@
 language: java
-script:
-  - "./gradlew clean jar jacocoTestReport"
+
 addons:
   sonarcloud:
     organization: "un1ckq"
     token:
       secure: grF5Q0zvbJvEUQpX7p0OuqwVG7LXgKRwGrLwSR9pduJS4HaSZnKyrf5O/Rgmkr03IHChhmNV3cEsQP1hjHTeW49pxbKurEOnpr5wDPptMBT9hpskLrRIE/NlM7HsW4J4K6/PxNvBRz5AbohCEWY9qop2AjV8VTEsbTF3BOruhBjjD3fDVmdtTOIb+3XMErhA7YictKCYoHsZLJiRT3o0G/w1atKYHlH2j6QUCugRZ8ZgboCWiShQ6R8zfMNpjwYDiBpMbODcOtYDBIwFlsoNcNuoZS6XtRywWrGfphRYZgPuObhRkps+wr++/L66uW5GTGT1q9RFMY+xo5/Zjvpwxt61nYFgdDx5g2vGgtbRUkwG6mOChzLs9iC4wkOTrnVnjGdrYuN1JkRz1kK4MaeeMoQ4MMuJ3N6ve6LUl+9yqPoFiTnJpV5JTiVQw4jCMOS56aGHgDThee8hTEP+BbnonSjb7w1kY7Qli3bA2WDWUnRfPWPmBRow1aSVtUAATuDucRqW/XvL4KPdlWEppjupY3ymMK8G5/A5bQumKdG+/1cHwxL6PPAvUsRMxh6Qaen2FFrsHIb7QPbStvOBrPGE7CDZS5ZGNw48MF8j0wXCM1HoRvVJQDDPsosz39gb9+R0qJ7lzUfFNYraAMgu8eEguhYQyTE5h4gAa37bNrzLio8=
-  script:
-    - "./gradlew sonarqube"
-
+script:
+  - "./gradlew clean jar sonarqube"
 deploy:
   provider: heroku
   app: demoappfortravisci
