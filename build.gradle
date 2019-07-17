@@ -1,12 +1,11 @@
 plugins {
     id 'org.springframework.boot' version '2.1.6.RELEASE'
     id 'java'
+    id 'jacoco'
     id "org.sonarqube" version "2.7"
 }
 
 apply plugin: 'io.spring.dependency-management'
-apply plugin: "jacoco"
-apply plugin: 'org.sonarqube'
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -16,52 +15,25 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
-}
-
-
-jacoco {
-    toolVersion = "0.8.3"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
-
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
-}
-
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+    testCompile("org.junit.jupiter:junit-jupiter:5.5.0")
 }
 
 jacocoTestReport {
     reports {
         xml.enabled true
-        xml.destination file("$buildDir/jacoco.xml")
     }
 }
 
-artifacts {
-    archives sourcesJar
-}
-
-jacocoTestReport.dependsOn test
-
 sonarqube {
     properties {
-        property 'sonar.codeCoveragePlugin', 'jacoco'
-        property 'sonar.java.binaries', "$buildDir/classes"
-        property 'sonar.java.libraries', "$buildDir/**/*.jar"
-        property 'sonar.coverage.jacoco.xmlReportPaths', "$buildDir/jacoco.xml"
-        property 'sonar.projectKey', 'un1cq'
-
+        property 'sonar.projectName', 'demo-cicd'
     }
 }
