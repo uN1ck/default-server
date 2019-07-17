@@ -7,7 +7,10 @@ addons:
       secure: WoPCQPGmPhIl2MApFYhu7pWik4/nAYCzNSK9rrTS2RFCUfKKP05483tXu7ZF6nYLjHIOf0P0at1ra6CioU3a5k7CCqIHz9baCcVQpTyHEXH2txLrPZ3vkZe5W8SeBMGpLQvUbRf75b46bZmnNd5x6/19LoLs0zfwEQmMpBYmPhjjN3MVc0Hax3WnTcrPrf1Qsa/rDR2GLX27agkJ9jX+wT0XMvkifRQUbEwc4OpOx4wI32pMMNi0OoQa2jOkHo1vR8Y40Xuv1KEofvHjdQXhHPZ58lUpaY5UtERYF2hM7fzJWKF/jS1ymqx87z8GA8IJiuGXiVoDS1+LHY+wSdBfOoo7ebH9sMUOmM/ebFcM9y54NbqOFcRlL1e0pzv68acPTQtZX22mT8i6NM5489xZbmLmlJgHCRFA8ZKDkv0Of/rMO37Pbh/98AK924+CVrr30onlyq3K8h01F6f5mTmT79uEfxJO5Wv2rZ+d9J11ok1hGrK9nBYlrNorldqqUBwPo54EtVWDZ7LIZWkW1ksNxfurSPeOleoLZsV+6tTKVD9tmHS2o0W2zDl2fyh0QE+1y4UgNrbdjD2yJ9RtqYlzsgEpOwqzYrtGTOdnWtKBrqEzW289oE/vWADwkc2KNCvePN89BEpGpl/9upKUOc6dDJXLQzYa1lAvmLLDveShj7k=
 
 script:
-  - "./gradlew clean jar sonarqube"
+  - "./gradlew clean jar sonarqube -Dsonar.projectKey=un1ckq \
+                                    -Dsonar.organization=un1ckq \
+                                    -Dsonar.host.url=https://sonarcloud.io \
+                                    -Dsonar.login=813a2d5e9eb92eab3c5d1a7cf4738c35ce91d75f"
 deploy:
   provider: heroku
   app: demoappfortravisci
