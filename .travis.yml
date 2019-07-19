@@ -8,6 +8,7 @@ addons:
 
 script:
   - "./gradlew clean jar sonarqube -Dsonar.projectKey=un1ckq -Dsonar.organization=un1ckq -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=813a2d5e9eb92eab3c5d1a7cf4738c35ce91d75f"
+
 deploy:
   provider: heroku
   app: demoappfortravisci

@@ -20,11 +20,11 @@ public class PowProviderImplTest {
         Assertions.assertEquals(100, value);
     }
 
-//    @Test
-//    public void getPowFromTenFails() {
-//        int value = powProvider.getPow(10);
-//        Assertions.assertEquals(122, value);
-//    }
+    @Test
+    public void getPowFromTenFails() {
+        int value = powProvider.getPow(10);
+        Assertions.assertEquals(122, value);
+    }
 
 
 }
