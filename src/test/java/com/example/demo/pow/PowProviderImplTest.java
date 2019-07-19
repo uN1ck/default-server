@@ -22,8 +22,8 @@ public class PowProviderImplTest {
 
     @Test
     public void getPowFromTenFails() {
-        int value = powProvider.getPow(10);
-        Assertions.assertEquals(122, value);
+        int value = powProvider.getPow(11);
+        Assertions.assertEquals(121, value);
     }
 
 
