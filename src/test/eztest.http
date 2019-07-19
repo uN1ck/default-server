@@ -10,5 +10,17 @@ Accept: application/json
 
 ###
 
-GET http://localhost:5000/ping
+GET http://localhost:5000/pow?value=11
 Accept: application/json
+
+###
+
+GET https://demoappfortravisci.herokuapp.com/ping
+Accept: application/json
+
+###
+
+GET https://demoappfortravisci.herokuapp.com/pow?value=11
+Accept: application/json
+
+###
